@@ -11,7 +11,7 @@ import pickle
 import matplotlib.pyplot as plt
 from diffsimgen import diffsimrun
 from pathlib import Path
-import yaml
+import glob
 
 # Main script to setup and train the Random
 # Forest (RF) or multi-layers perceptron (MLP) regressors used to fit the model
@@ -51,8 +51,8 @@ modeldict = {"sigma_mppca":sigma_mppca,"sigma_SHresiduals":sigma_SHresiduals,"Ns
 
 if snakemake.params.Model[0] == 'User_model': # User provided noiseless signal and parameter set. 
     
-    noiseless_signal = np.load(snakemake.params.path_user_signal)
-    path = Path(snakemake.params.path_user_signal)
+    noiseless_signal = np.load(snakemake.params.path_user_signal[0])
+    path = Path(snakemake.params.path_user_signal[0])
     param_file = glob.glob(f"{path.parent}/*parameter*.npy") # Search for corresponding parameter array
     if not param_file:
         raise TypeError("The --Model is User_model but could not find *parameter*.npy file.")
