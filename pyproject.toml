@@ -11,7 +11,7 @@ packages = [{include = "Supervised_dMRI_fitting"}]
 Supervised_dMRI_fitting = "Supervised_dMRI_fitting.run:main"
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12"
+python = ">=3.9,<3.12"
 snakebids = "0.14.0"
 snakemake = "7.25.0"
 numpy = ">=1.13"
@@ -19,7 +19,7 @@ nibabel = ">=3.2.1"
 scipy = ">=1.8.0"
 matplotlib = "<=3.9.2"
 scikit-image = ">=0.19.0"
-scikit-learn = ">=1.0.1"
+scikit-learn = ">=1.4.0"
 docutils = "<=0.21.2"
 PuLP = "<=2.7.0"
 DiffSimGen = { git = "https://github.com/Bradley-Karat/DiffSimGen.git" }
